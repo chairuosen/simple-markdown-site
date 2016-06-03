@@ -2,7 +2,7 @@
 
  - 柴若森 男 1990
  - 北京人
- - 2年工作经验 
+ - 3年工作经验 
  - chairuosen@gmail.com
 
  --------------------------------------
@@ -15,55 +15,62 @@
  - 电子信息工程 
 
 ## 工作经历
+ 
  - 2013 - 2015
  - 微博英才科技发展有限公司
- - 前端开发
- - 负责微招聘 (http://zhaopin.weibo.com) 及其周边产品的开发迭代
+ - 负责微招聘 ( http://zhaopin.weibo.com ) 及其周边产品的开发迭代
 
- - 2015.10 - now
- - 量化派
- - 前端开发
- - 负责信用钱包 (http://m.xyqb.com) 迭代维护
+   --
 
-## 自评
+ - 2015
+ - 量化派 ( QuantGroupy )
+ - 负责信用钱包 ( http://m.xyqb.com ) 迭代维护, 信用白条 ( http://bt.xyqb.com ) 开发
 
-- 对前端技术感兴趣，自我驱动学习，逻辑思维较强，但是没有科班出身的后端语言或者算法基础。
+   --
+   
+ - 2015 - now
+ - 云信 ( CreditCloud )
+ - 负责内部资产管理系统前端开发。
 
-- CSS 自我感觉非常良好，熟悉less sass(接触8年,css2,css3都很了解，能写的跟原生UI一样)，
+## 关于我
 
-- JS 使用熟练 (jQuery原生js均可，angular vue 等MV×框架也均熟悉，独立负责过整站前端)，
+- 对前端技术感兴趣, 自我驱动学习, 逻辑思维较强, 工程经验强, 后端语言有了解,但相比前端较薄弱。
 
-- 熟悉前端构建，Grunt, Gulp, Webpack均有经验，自建 Jenkins 用于持续集成。
+- CSS 自我感觉非常良好, 熟悉less sass ( 接触9年, css2, css3都很了解 )
+
+- JS 使用熟练 ( Vanilla jQuery Angular Vue, Node CommonJS ES6，独立负责过整站前端 )
+
+- 熟悉前端构建，Grunt, Gulp, Webpack均有经验，Jenkins 持续集成。
 
 - 熟悉前端性能优化，DNS，CDN，负载均衡，异步加载，资源缓存等等。
 
-- 写过前端自动测试 基于 CasperJS ，
+- 熟悉前端UI自动测试 基于 CasperJS。
 
-- 写过 PHP (写写业务逻辑，没写过SQL #世界上最好的语言# )，
+- 写过 PHP ( C,V 层，没写过 SQL )，
 
-- 了解 Redis memcached ，会用，但没有优化经验。
+- 了解 Redis Memcache ，会用，但没有优化经验。
 
-- 自学 nodejs (深入浅出 & Express,自己搭过一个MVC的整站作为调试工具)，
+- 熟悉 Mac Linux 环境 ( 有自己VPS ) 
 
-- 熟悉 Mac Linux 环境(有自己VPS 青云 DO Linode) 
+- 熟悉 shell: vim sed awk etc. 写过上线脚本 
 
-- 熟悉 shell: vim sed etc. 写过上线脚本 
+- 熟悉 Git SVN 使用 SourceTree
 
-- 熟悉Git SVN 使用 SourceTree
+- 熟练使用 Chrome DevTools 开发调试
 
-- 熟悉常用正则
+- 了解 Electron （ Demo only ）;
 
-- docker 入门 持续学习中，
+- 熟悉 Docker（ 开发环境,没有生产环境使用经验），
 
-- 熟悉 nginx apache 配置 ，
+- 熟悉 Nginx Apache，
 
-- 熟练翻墙 自建ss，
+- 熟练翻墙, 自建ss，
 
-- 代码洁癖，习惯思考寻找更优雅的方式去实现功能。
+- 代码洁癖, 习惯思考寻找更简洁优雅的方式去实现功能。
 
-- 有设计和产品方面的思(jiao)考(zhen)，能够发现问题，解决问题
+- 有设计和产品方面的 思 (jiao) 考 (zhen)，能够发现问题, 分析问题, 提出解决方案
 
-- 有带人经验(2人)
+- 有带人经验 (2人)
 
 - Codegame JS坦克AI杯赛第一名
 
