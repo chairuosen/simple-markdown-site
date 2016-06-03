@@ -5,7 +5,9 @@ Build a site with some markdown file.
 ## Installation
 
 ```
-
+git clone https://github.com/chairuosen/simple-markdown-site
+cd simple-markdown-site
+npm install
 ```
 
 
