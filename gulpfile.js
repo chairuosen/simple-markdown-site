@@ -7,22 +7,16 @@ var watch = require('gulp-watch');
 var del = require('del');
 var replace = require('gulp-replace');
 var fs = require('fs');
+var through2 = require('through2');
 
 var option = {
     src:{
-        md:'src/resume.md',
+        md:['markdown/**/*.md'],
         html:'src/index.html',
-        static:['src/scripts/*','src/styles/*']
+        static:['src/_scripts_/*','src/_styles_/*']
     },
     dist:'dist'
 };
-
-function getDistDir(file) {
-    var path = file.path;
-    var match = path.match(/^.*\/src(\/.*)\/[^\/]*$|^.*\/src(\/)[^\/]*$/);
-    var relativeDist = match[1]||match[2];
-    return option.dist+relativeDist;
-}
 
 function encode(text) {
     return new Buffer(text).toString('base64');
@@ -33,25 +27,46 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('copy',function () {
-    return gulp.src(option.src.static)
-        .pipe(gulp.dest(getDistDir));
+    return gulp.src(option.src.static,{base: 'src'})
+        .pipe(gulp.dest(option.dist));
 });
 
+// gulp.task('build:html',function () {
+//     var content = fs.readFileSync(option.src.md).toString();
+//     content = encode(encodeURIComponent(content));
+//     return gulp.src([option.src.html])
+//         .pipe(replace(/__content__/g,content))
+//         .pipe(gulp.dest(getDistDir));
+// });
+
 gulp.task('build:html',function () {
-    var content = fs.readFileSync(option.src.md).toString();
-    content = encode(encodeURIComponent(content));
-    return gulp.src([option.src.html])
-        .pipe(replace(/__replace__/g,content))
-        .pipe(gulp.dest(getDistDir));
+    var templateHTML = fs.readFileSync(option.src.html).toString();
+    return gulp.src(option.src.md,{base: 'markdown'})
+        .pipe(through2.obj(function (file, enc, callback) {
+            var name = path.basename(file.path);
+            var markdown = file.contents.toString();
+            var encodedMarkdown = encode(encodeURIComponent(markdown));
+            var html = templateHTML.replace(/__content__/,encodedMarkdown);
+            html = html.replace(/__title__/,name);
+            file.path = file.path.replace(/\.md/,".html");
+            file.contents = new Buffer(html);
+            this.push(file);
+            callback()
+        }))
+        .pipe(gulp.dest(option.dist));
 });
 
 gulp.task('build',['copy'],function () {
     return gulp.start('build:html');
 });
 
-gulp.task('watch',function (cb) {
-    watch('src/**/*',function (file) {
-        if( ['resume.md','index.html'].indexOf(path.basename(file.path)) >=0 ){
+gulp.task('watch',['build'],function (cb) {
+    watch(['src/**/*'].concat(option.src.md),function (file) {
+        var name = path.basename(file.path);
+        if(
+            name == 'index.html'
+            || name.split('.')[1] == "md"
+        ){
             gulp.start('build:html');
         }else{
             gulp.start('copy');

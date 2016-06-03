@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="user-scalable=no, width=device-width, initial-scale=1.0,user-scalable=0, maximum-scale=1.0">
-    <title>Resume of chairuosen</title>
+    <title>__title__</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <script src="scripts/markd.js"></script>
+    <script src="/_scripts_/markd.js"></script>
     <!--<script src="scripts/base64.js"></script>-->
-    <link rel="stylesheet" href="styles/markdown.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="/_styles_/markdown.css">
+    <link rel="stylesheet" href="/_styles_/style.css">
 </head>
 <body>
-<div id="result">__replace__</div>
+<div id="result">__content__</div>
 <script>
     try{
         document.getElementById('result').innerHTML = marked(decodeURIComponent(atob(document.getElementById('result').innerHTML.trim())));
