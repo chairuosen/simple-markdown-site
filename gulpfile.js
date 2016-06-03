@@ -37,12 +37,16 @@ gulp.task('copy',function () {
         .pipe(gulp.dest(getDistDir));
 });
 
-gulp.task('build',['copy'],function () {
+gulp.task('build:html',function () {
     var content = fs.readFileSync(option.src.md).toString();
     content = encode(encodeURIComponent(content));
     return gulp.src([option.src.html])
         .pipe(replace(/__replace__/g,content))
         .pipe(gulp.dest(getDistDir));
+});
+
+gulp.task('build',['copy'],function () {
+    return gulp.start('build:html');
 });
 
 gulp.task('watch',function (cb) {
