@@ -50,7 +50,11 @@ gulp.task('build',['copy'],function () {
 });
 
 gulp.task('watch',function (cb) {
-    watch('src/**/*',function () {
-        gulp.start('build');
+    watch('src/**/*',function (file) {
+        if( ['resume.md','index.html'].indexOf(path.basename(file.path)) >=0 ){
+            gulp.start('build:html');
+        }else{
+            gulp.start('copy');
+        }
     })
 })
