@@ -10,4 +10,4 @@ function run(cmd) {
     })
 }
 run('gulp watch');
-run('cd dist;browser-sync start --files=*.html,**/*.js,**/*.css --server --no-notify');
+run('mkdir dist;cd dist;browser-sync start --files=*.html,**/*.js,**/*.css --server --no-notify');
