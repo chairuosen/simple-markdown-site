@@ -26,7 +26,6 @@ then run `npm run build`, You will get compiled html file in `dist` dir, same tr
 
 ```
 dist
-├── _scripts_ // default js  edit it in `src`
 ├── _styles_ // default css  edit it in `src`
 ├── index.html
 └── sub

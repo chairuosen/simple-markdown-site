@@ -7,17 +7,10 @@
     <title>__title__</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <script src="/_scripts_/markd.js"></script>
-    <!--<script src="scripts/base64.js"></script>-->
     <link rel="stylesheet" href="/_styles_/markdown.css">
     <link rel="stylesheet" href="/_styles_/style.css">
 </head>
 <body>
 <div id="result">__content__</div>
-<script>
-    try{
-        document.getElementById('result').innerHTML = marked(decodeURIComponent(atob(document.getElementById('result').innerHTML.trim())));
-    }catch(e){};
-</script>
 </body>
 </html>

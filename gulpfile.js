@@ -8,6 +8,7 @@ var del = require('del');
 var replace = require('gulp-replace');
 var fs = require('fs');
 var through2 = require('through2');
+var marked = require('marked');
 
 var option = {
     src:{
@@ -45,8 +46,8 @@ gulp.task('build:html',function () {
         .pipe(through2.obj(function (file, enc, callback) {
             var name = path.basename(file.path);
             var markdown = file.contents.toString();
-            var encodedMarkdown = encode(encodeURIComponent(markdown));
-            var html = templateHTML.replace(/__content__/,encodedMarkdown);
+            var markdownHtml = marked(markdown);
+            var html = templateHTML.replace(/__content__/,markdownHtml);
             html = html.replace(/__title__/,name);
             file.path = file.path.replace(/\.md/,".html");
             file.contents = new Buffer(html);
