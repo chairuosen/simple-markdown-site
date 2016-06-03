@@ -2,6 +2,13 @@ Simple Markdown Site
 ========================
 Build a site with some markdown file.
 
+## Installation
+
+```
+
+```
+
+
 ## How it works?
 
 Here is your markdown file
