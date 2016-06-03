@@ -1,6 +1,6 @@
 Simple Markdown Site
 ========================
-Build a site with some html file compiled from markdown file.
+Build a site with some markdown file.
 
 ## How it works?
 
