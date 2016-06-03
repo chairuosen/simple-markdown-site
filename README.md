@@ -24,7 +24,7 @@ dist
     └── sub-dir-file.html
 ```
 
-Just host `dist` dir with Nginx and you get website;
+Just host `dist` dir with Nginx and you get a website;
 
 ## Development
 
