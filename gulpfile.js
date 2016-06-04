@@ -19,6 +19,16 @@ var option = {
     dist:'dist'
 };
 
+function run(cmd) {
+    var instance = exec(cmd);
+    instance.on('close',function () {
+        process.exit();
+    })
+    process.on('exit',function () {
+        instance.kill();
+    })
+}
+
 function encode(text) {
     return new Buffer(text).toString('base64');
 }
@@ -59,6 +69,11 @@ gulp.task('build:html',function () {
 
 gulp.task('build',['copy'],function () {
     return gulp.start('build:html');
+});
+
+gulp.task('dev',function (cb) {
+    run('gulp watch');
+    run('mkdir dist;cd dist;browser-sync start --files=*.html,**/*.js,**/*.css --server --no-notify');
 });
 
 gulp.task('watch',['build'],function (cb) {
