@@ -11,7 +11,7 @@ npm install
 ```
 
 
-## How it works?
+## How to use?
 
 Here is your markdown file
 
